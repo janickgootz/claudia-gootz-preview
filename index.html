@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claudia Gootz – Emotionally Focused Therapy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Concrete Club Studio tokens */
+    --color-ember-ink: #d9462b;
+    --color-dusty-rose: #e296bb;
+    --color-ink-black: #000000;
+    --color-charcoal: #212121;
+    --color-bone-white: #f5f6f5;
+    --color-paper-white: #ffffff;
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', Helvetica, Arial, sans-serif;
+
+    --text-caption: 12px;
+    --text-body-sm: 14px;
+    --text-body: 16px;
+    --text-subheading: 26px;
+
+    --spacing-30: 30px;
+    --spacing-60: 60px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-weight: 300;
+    color: var(--color-ink-black);
+    background: var(--color-bone-white);
+    line-height: 1.5;
+    font-size: var(--text-body);
+  }
+
+  a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+  a:hover { opacity: 0.7; }
+
+  .tag {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: var(--text-caption);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 0.78;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  section, header, footer { position: relative; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background: linear-gradient(rgba(226,150,187,0.15), rgba(226,150,187,0.15)), url("assets/hero-optimized.jpg") center center / cover no-repeat;
+    padding: 110px 30px 70px;
+    overflow: hidden;
+  }
+
+  .hero .identity-tag {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    max-width: 300px;
+    color: var(--color-ink-black);
+  }
+
+  .hero .site-nav {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    text-align: right;
+    color: var(--color-ink-black);
+  }
+
+  .hero .site-nav a {
+    border-bottom: none;
+    margin-left: 10px;
+  }
+  .hero .site-nav a:hover { text-decoration: underline; }
+
+  .hero-wordmark-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero .wordmark {
+    font-size: clamp(40px, 6vw, 88px);
+    color: var(--color-ember-ink);
+    text-align: center;
+  }
+
+  .hero .accent-line {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    color: var(--color-ember-ink);
+    display: none;
+  }
+
+  .hero .subtitle {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: clamp(16px, 2.6vw, 30px);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--color-ink-black);
+    margin-top: 20px;
+  }
+
+  /* ---------- Light editorial section ---------- */
+  .light-section {
+    background: var(--color-bone-white);
+    padding: var(--spacing-60) 30px;
+  }
+
+  .section-heading {
+    max-width: 1000px;
+    margin: 0 auto 36px;
+    font-size: clamp(28px, 4.5vw, 58px);
+    color: var(--color-ink-black);
+  }
+
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 0 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .intro-col { grid-column: 1; grid-row: 1; }
+  .rest-col { grid-column: 1; grid-row: 2; }
+  .portrait-col {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: start;
+  }
+
+  .body-col {
+    max-width: 620px;
+    font-size: var(--text-body);
+    font-weight: 300;
+  }
+
+  .portrait-col .portrait-placeholder {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .body-col p {
+    margin: 0 0 18px;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  .sub-block { margin-top: 44px; }
+
+  .sub-block .subheading {
+    font-family: var(--font-display);
+    font-size: var(--text-subheading);
+    font-weight: 400;
+    margin: 0 0 14px;
+  }
+
+  /* ---------- Dark inverted section ---------- */
+  .dark-section {
+    background: var(--color-charcoal);
+    color: var(--color-paper-white);
+    padding: 50px 30px;
+  }
+
+  .dark-section .wordmark {
+    color: var(--color-paper-white);
+    font-size: clamp(28px, 4.5vw, 58px);
+    text-align: center;
+    margin-bottom: 46px;
+  }
+
+  .offer-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .offer-cols .tag { color: var(--color-paper-white); opacity: 0.7; display: block; margin-bottom: 12px; }
+
+  .offer-cols h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 21px;
+    margin: 0 0 12px;
+  }
+
+  .offer-cols p {
+    font-weight: 300;
+    font-size: var(--text-body-sm);
+    margin: 0 0 12px;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  /* ---------- Preise ---------- */
+  .price-list { max-width: 640px; margin: 40px auto 0; }
+
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 0;
+    border-top: 1px solid var(--color-ink-black);
+  }
+  .price-list .price-row:last-of-type { border-bottom: 1px solid var(--color-ink-black); }
+
+  .price-row .label { font-weight: 400; }
+  .price-row .value { font-style: italic; font-weight: 300; white-space: nowrap; }
+
+  .price-note {
+    max-width: 640px;
+    margin: 20px auto 0;
+    font-size: var(--text-body-sm);
+    font-style: italic;
+    opacity: 0.6;
+  }
+
+  /* ---------- Kontakt (rose) ---------- */
+  .contact-section {
+    background: var(--color-dusty-rose);
+    padding: var(--spacing-60) 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .heart-doodle {
+    position: absolute;
+    color: var(--color-ink-black);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .heart-doodle-1 {
+    width: 44px;
+    top: 14%;
+    left: calc(50% - 260px);
+    transform: rotate(-16deg);
+  }
+
+  .heart-doodle-2 {
+    width: 34px;
+    bottom: 12%;
+    right: calc(50% - 230px);
+    transform: rotate(11deg);
+  }
+
+  @media (max-width: 700px) {
+    .heart-doodle-1 { left: 20px; top: 8%; width: 34px; }
+    .heart-doodle-2 { right: 20px; bottom: 8%; width: 28px; }
+  }
+
+  .contact-section .wordmark {
+    color: var(--color-ember-ink);
+    font-size: clamp(28px, 4.5vw, 58px);
+  }
+
+  .contact-section p {
+    max-width: 560px;
+    margin: 24px auto 30px;
+    font-weight: 300;
+  }
+
+  .contact-section .email-link {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 3vw, 30px);
+    color: var(--color-ink-black);
+  }
+
+  .contact-form-area {
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .form-toggle {
+    display: inline-block;
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--color-ink-black);
+    border-radius: 0;
+    font-family: var(--font-display);
+    font-size: 15px;
+    padding: 4px 2px 6px;
+    cursor: pointer;
+    color: var(--color-ink-black);
+  }
+
+  .form-toggle.is-open {
+    position: absolute;
+    top: -6px;
+    right: 0;
+    border-bottom: none;
+    font-size: 26px;
+    line-height: 1;
+    padding: 4px 6px;
+  }
+
+  .form-toggle:hover {
+    color: var(--color-ember-ink);
+    border-color: var(--color-ember-ink);
+  }
+
+  .contact-form-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease;
+  }
+
+  .contact-form-wrapper.open {
+    grid-template-rows: 1fr;
+    margin-top: 40px;
+  }
+
+  .contact-form-inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .contact-form {
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .form-field { margin-bottom: 26px; }
+
+  .form-field label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color-ink-black);
+    opacity: 0.65;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    display: block;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-ink-black);
+    border-radius: 0;
+    padding: 8px 0;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--color-ink-black);
+    -webkit-appearance: none;
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-bottom-color: var(--color-ember-ink);
+  }
+
+  .form-field textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: var(--font-sans);
+  }
+
+  .form-submit {
+    display: inline-block;
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--color-ink-black);
+    border-radius: 0;
+    font-family: var(--font-display);
+    font-size: 16px;
+    padding: 4px 2px 6px;
+    margin-top: 6px;
+    cursor: pointer;
+    color: var(--color-ink-black);
+  }
+
+  .form-submit:hover {
+    color: var(--color-ember-ink);
+    border-color: var(--color-ember-ink);
+  }
+
+  /* ---------- Placeholders ---------- */
+  .placeholder-box {
+    border: 1px dashed var(--color-ink-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .placeholder-box .tag { opacity: 0.6; }
+
+  .portrait-placeholder {
+    aspect-ratio: 3 / 4;
+  }
+
+  .icon-box {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+    color: var(--color-paper-white);
+  }
+  .icon-box svg { width: 100%; height: 100%; display: block; }
+
+  .iceeft-logo {
+    background: var(--color-paper-white);
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+  }
+  .iceeft-logo {
+    padding: 4px 8px;
+  }
+
+  .iceeft-logo img {
+    height: 20px;
+    width: auto;
+    display: block;
+  }
+
+  /* ---------- Footer ---------- */
+  footer.site-footer {
+    background: var(--color-charcoal);
+    color: var(--color-paper-white);
+    padding: 40px 30px var(--spacing-30);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .footer-inner .praxisname {
+    font-family: var(--font-display);
+    font-size: 15px;
+  }
+
+  .footer-tagline { opacity: 0.6; margin-top: 6px; }
+
+  .footer-iceeft {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .footer-iceeft a { color: var(--color-paper-white); }
+
+  .footer-legal {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    gap: 24px;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 860px) {
+    .offer-cols { grid-template-columns: 1fr; }
+    .hero .site-nav { position: static; text-align: left; margin-bottom: 60px; }
+    .hero .identity-tag { position: static; display: block; margin-bottom: 30px; max-width: none; }
+    .hero { padding-top: 40px; }
+
+    .editorial-grid { grid-template-columns: 1fr; }
+    .intro-col { grid-column: 1; grid-row: 1; }
+    .portrait-col { grid-column: 1; grid-row: 2; align-self: auto; }
+    .rest-col { grid-column: 1; grid-row: 3; }
+    .portrait-col .portrait-placeholder { margin: 20px auto 10px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="identity-tag tag">
+      Praxis für Einzel- und Paarberatung — psychologische Beratung seit 2015, spezialisiert auf Emotionally Focused Therapy (EFT).
+    </div>
+    <nav class="site-nav tag">
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#angebot">Angebot</a>
+      <a href="#preise">Preise</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="hero-wordmark-row">
+      <h1 class="wordmark">Claudia Gootz</h1>
+    </div>
+    <div class="subtitle">Emotionally Focused Therapy</div>
+  </header>
+
+  <section class="light-section" id="ueber-mich">
+    <h2 class="wordmark section-heading">Über mich</h2>
+    <div class="editorial-grid">
+      <div class="body-col intro-col">
+        <p>Ich begleite Menschen, weil ich davon überzeugt bin, dass gelingende Beziehungen unser Leben tief prägen.</p>
+        <p>Seit 2015 arbeite ich in der psychologischen Beratung. Als Sozialpädagogin mit einem vierjährigen Master in Counselling unterstütze ich Einzelpersonen und Paare in herausfordernden Lebensphasen.</p>
+        <p>Ein besonderer Teil meiner Arbeit ist die Beratung von geflüchteten Menschen – häufig in Zusammenarbeit mit Sprachmittler:innen. Diese Erfahrung hat meinen Blick für unterschiedliche Lebensrealitäten geschärft und mir immer wieder gezeigt, wie grundlegend das menschliche Bedürfnis nach Sicherheit, Verständnis und Verbundenheit ist.</p>
+      </div>
+
+      <div class="portrait-col">
+        <div class="placeholder-box portrait-placeholder">
+          <span class="tag">Porträtfoto<br>Claudia Gootz</span>
+        </div>
+      </div>
+
+      <div class="body-col rest-col">
+        <div class="sub-block">
+          <h3 class="subheading">Warum ich tue, was ich tue?</h3>
+          <p>Weil ich immer wieder erlebe, dass hinter Konflikten, Rückzug oder Missverständnissen oft etwas anderes steckt, als das worüber gesprochen wird. Es geht um Nähe, um Bindung – und um den Wunsch, gesehen und verstanden zu werden.</p>
+          <p>Genau dort setze ich an. Deshalb habe ich mich intensiv in emotionsfokussierter Paartherapie (EFT) weitergebildet und setze hier einen besonderen Schwerpunkt meiner Arbeit.</p>
+          <p>Ich unterstütze Paare dabei, sich wieder auf einer tieferen Ebene zu begegnen – jenseits von Vorwürfen und festgefahrenen Mustern. Und ich begleite Einzelpersonen dabei, sich selbst besser zu verstehen und neue Wege im Umgang mit sich und anderen zu entwickeln.</p>
+        </div>
+
+        <div class="sub-block">
+          <h3 class="subheading">Qualität &amp; Professionalität</h3>
+          <p>Vertrauen, fachliche Kompetenz und eine hohe Qualität meiner Arbeit stehen für mich an erster Stelle. Deshalb bilde ich mich kontinuierlich fort und nehme regelmäßig an Supervisionen und Intervisionen teil.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section" id="angebot">
+    <h2 class="wordmark">Mein Angebot</h2>
+    <div class="offer-cols">
+      <div>
+        <div class="icon-box" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="50" cy="30" r="16"/>
+            <path d="M18 88 C18 58 32 50 50 50 C68 50 82 58 82 88"/>
+          </svg>
+        </div>
+        <span class="tag">01 — Einzelberatung</span>
+        <h3>Einzelberatung</h3>
+        <p>Manchmal geraten wir in Lebensphasen, in denen wir uns orientierungslos, belastet oder innerlich blockiert fühlen. Ich unterstütze Sie dabei, Ihre Situation zu sortieren, eigene Muster zu verstehen und neue Perspektiven zu entwickeln.</p>
+      </div>
+      <div>
+        <div class="icon-box" aria-hidden="true">
+          <svg viewBox="0 0 140 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="48" cy="28" r="14"/>
+            <path d="M20 88 C20 60 34 54 48 54 C58 54 66 57 70 62"/>
+            <circle cx="92" cy="28" r="14"/>
+            <path d="M120 88 C120 60 106 54 92 54 C82 54 74 57 70 62"/>
+          </svg>
+        </div>
+        <span class="tag">02 — Paarberatung</span>
+        <h3>Paarberatung</h3>
+        <p>Wiederkehrende Konflikte, Rückzug oder das Gefühl, sich verloren zu haben – viele Paare kennen diese Dynamiken. In der Beratung unterstütze ich Sie dabei, die emotionalen Hintergründe Ihrer Konflikte zu verstehen und neue Wege zu finden, miteinander in Kontakt zu kommen.</p>
+        <p>Ziel ist nicht „richtig oder falsch", sondern ein tieferes Verständnis füreinander und eine neue Form von Verbindung.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="light-section" id="preise">
+    <div style="max-width:640px; margin:0 auto;">
+      <h2 class="wordmark" style="font-size:clamp(32px,6vw,64px); margin-bottom:10px;">Preise</h2>
+    </div>
+    <div class="price-list">
+      <div class="price-row">
+        <span class="label">Einzelberatung (50 Minuten)</span>
+        <span class="value">XX €</span>
+      </div>
+      <div class="price-row">
+        <span class="label">Paarberatung (75–90 Minuten)</span>
+        <span class="value">XX €</span>
+      </div>
+    </div>
+    <p class="price-note">Hinweis: Die Kosten werden in der Regel nicht von den Krankenkassen übernommen.</p>
+  </section>
+
+  <section class="contact-section" id="kontakt">
+    <svg class="heart-doodle heart-doodle-1" viewBox="0 0 100 90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M48,78 C24,58 6,40 5,22 C4,8 18,2 30,9 C38,14 44,22 48,29 C53,21 60,13 70,8 C83,1 97,9 95,23 C93,41 74,59 48,78 Z"/>
+      <path d="M45,71 C29,56 14,41 12,27" opacity="0.55"/>
+    </svg>
+
+    <h2 class="wordmark">Kontakt</h2>
+    <p>Wenn Sie sich angesprochen fühlen, nehmen Sie gern über das folgende Formular Kontakt mit mir auf. Wir klären Ihr Anliegen und schauen gemeinsam, ob und wie ich Sie unterstützen kann.</p>
+
+    <div class="contact-form-area">
+      <button type="button" class="form-toggle" id="contact-toggle">Jetzt anfragen</button>
+
+      <div class="contact-form-wrapper" id="contact-form-wrapper">
+        <div class="contact-form-inner">
+          <form class="contact-form" action="mailto:hallo@claudiagootz.de" method="POST" enctype="text/plain">
+            <div class="form-field">
+              <label for="cf-name" class="tag">Name</label>
+              <input type="text" id="cf-name" name="Name" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="cf-email" class="tag">E-Mail</label>
+              <input type="email" id="cf-email" name="E-Mail" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="cf-message" class="tag">Nachricht</label>
+              <textarea id="cf-message" name="Nachricht" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Nachricht senden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <svg class="heart-doodle heart-doodle-2" viewBox="0 0 100 90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M48,78 C24,58 6,40 5,22 C4,8 18,2 30,9 C38,14 44,22 48,29 C53,21 60,13 70,8 C83,1 97,9 95,23 C93,41 74,59 48,78 Z"/>
+      <path d="M45,71 C29,56 14,41 12,27" opacity="0.55"/>
+    </svg>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="praxisname">Praxis für Einzel- und Paarberatung Claudia Gootz</div>
+        <div class="footer-tagline tag">Nähe verstehen. Verbindung stärken. Neue Wege finden.</div>
+      </div>
+      <div class="footer-iceeft">
+        <a class="iceeft-logo" href="https://iceeft.com" target="_blank" rel="noopener">
+          <img src="assets/iceeft-logo.svg" alt="ICEEFT Logo">
+        </a>
+        <span class="tag">Weitergebildet in EFT · <a href="https://iceeft.com" target="_blank" rel="noopener">iceeft.com</a></span>
+      </div>
+    </div>
+    <div class="footer-legal tag">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contact-toggle').addEventListener('click', function () {
+      var wrapper = document.getElementById('contact-form-wrapper');
+      var isOpen = wrapper.classList.toggle('open');
+      this.textContent = isOpen ? '×' : 'Jetzt anfragen';
+      this.classList.toggle('is-open', isOpen);
+      this.setAttribute('aria-label', isOpen ? 'Formular schließen' : 'Jetzt anfragen');
+      if (isOpen) {
+        document.getElementById('cf-name').focus();
+      }
+    });
+  </script>
+</body>
+</html>
