@@ -316,7 +316,7 @@
 
   .form-toggle.is-open {
     position: absolute;
-    top: -6px;
+    top: 0;
     right: 0;
     border-bottom: none;
     font-size: 26px;
@@ -337,7 +337,7 @@
 
   .contact-form-wrapper.open {
     grid-template-rows: 1fr;
-    margin-top: 40px;
+    margin-top: 56px;
   }
 
   .contact-form-inner {
@@ -491,8 +491,8 @@
 
   @media (max-width: 860px) {
     .offer-cols { grid-template-columns: 1fr; }
-    .hero .site-nav { position: static; text-align: left; margin-bottom: 60px; }
-    .hero .identity-tag { position: static; display: block; margin-bottom: 30px; max-width: none; }
+    .hero .site-nav { position: static; text-align: left; margin-bottom: 20px; }
+    .hero .identity-tag { position: static; display: block; margin: 24px auto 0; max-width: 300px; text-align: center; }
     .hero { padding-top: 40px; }
 
     .editorial-grid { grid-template-columns: 1fr; }
@@ -506,9 +506,6 @@
 <body>
 
   <header class="hero">
-    <div class="identity-tag tag">
-      Praxis für Einzel- und Paarberatung — psychologische Beratung seit 2015, spezialisiert auf Emotionally Focused Therapy (EFT).
-    </div>
     <nav class="site-nav tag">
       <a href="#ueber-mich">Über mich</a>
       <a href="#angebot">Angebot</a>
@@ -520,6 +517,10 @@
       <h1 class="wordmark">Claudia Gootz</h1>
     </div>
     <div class="subtitle">Emotionally Focused Therapy</div>
+
+    <div class="identity-tag tag">
+      Praxis für Einzel- und Paarberatung — spezialisiert auf Emotionally Focused Therapy (EFT).
+    </div>
   </header>
 
   <section class="light-section" id="ueber-mich">
